@@ -1,13 +1,17 @@
 package br.com.senai.teste.model;
 
-import jakarta.annotation.Generated;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+@Entity 
+@Table(name = "/livros")
 public class Livro {
     
     @Id 
-    @GeneratedValue(strategy =  = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String titulo;
@@ -44,7 +48,7 @@ public class Livro {
         this.autor = autor;
     }
 
-    public int anoPublicacao() {
+    public int getAnoPublicacao() {
         return anoPublicacao;
     }
 
