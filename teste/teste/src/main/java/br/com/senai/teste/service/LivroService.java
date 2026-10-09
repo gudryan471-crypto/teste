@@ -50,4 +50,13 @@ public class LivroService {
         return Optional.of(livroRepository.save(livro));
         }
     
+    public boolean excluir(Integer id) {
+
+        if (!livroRepository.existsById(id)) {
+            return false;
+        }
+
+        livroRepository.deleteById(id);
+        return true;
+    }
 }
